@@ -1,4 +1,4 @@
-date,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,weather_code,city,latitude,longitude
+date,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,weather_code,city_name,latitude,longitude
 2026-09-15,24.3,22.4,0.0,2,34.3,42.1,1,Ad Dakhla,23.725834,-15.966187
 2026-09-16,23.7,21.9,0.0,0,35.8,44.6,0,Ad Dakhla,23.725834,-15.966187
 2026-09-17,22.1,20.0,0.0,0,42.1,52.9,1,Ad Dakhla,23.725834,-15.966187

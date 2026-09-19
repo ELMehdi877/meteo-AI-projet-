@@ -1,0 +1,32 @@
+# Indique la version du format du fichier Docker Compose utilisée
+version: "3.8"
+
+# Section principale qui liste tous les conteneurs à lancer
+services:
+
+  # Nom du service interne dans Docker Compose (sert d'adresse réseau entre conteneurs)
+  postgres_db:
+    
+    # Image officielle téléchargée depuis Docker Hub (PostgreSQL 15 sur une version Linux légère)
+    image: postgres:15-alpine
+    
+    # Nom unique donné au conteneur sur ton système (visible via 'docker ps')
+    container_name: postgres_meteo
+    
+    # Redémarre automatiquement le conteneur s'il plante ou au démarrage du PC
+    environment:
+      POSTGRES_USER: postgres       # Nom de l'utilisateur administrateur
+      POSTGRES_PASSWORD: password123 # Mot de passe de connexion
+      POSTGRES_DB: meteo_db         # Nom de la base de données créée au premier lancement
+    
+    # Redirection de port : "Port_Sur_Ton_PC : Port_Dans_Le_Conteneur"
+    ports: 
+      - "5433:5432"
+
+    # Attachement du volume persistant au dossier de stockage interne de PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+# Déclaration globale du volume de stockage sur ton ordinateur (pour conserver les données)
+volumes:
+  postgres_data:
